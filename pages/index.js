@@ -79,7 +79,7 @@ export default function Home() {
         </section>
         <section className="my-16">
           <h2 className="text-gray-900 text-center font-bold text-2xl">
-            Best seller
+            Best Seller
           </h2>
           <p className="text-gray-800 text-center">
             Discover our most popular and top-rated products that customers
@@ -90,6 +90,9 @@ export default function Home() {
             <CardProduct title="KEYBOARD FULL-SIZE" />
             <CardProduct title="KEYBOARD FULL-SIZE" />
           </div>
+          <div className="flex justify-center w-full mt-6">
+            <ButtonPrimary>Get Started Now</ButtonPrimary>
+          </div>
         </section>
         <section className="my-16">
           <h2 className="text-gray-900 text-center font-bold text-2xl">
@@ -98,6 +101,7 @@ export default function Home() {
           <p className="text-gray-800 text-center">
             Discover our most popular and top-rated products that customers
           </p>
+          <div className="relative grid grid-cols-2 gap-4"></div>
         </section>
       </Container>
     </>
