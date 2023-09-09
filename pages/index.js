@@ -7,7 +7,8 @@ import Link from "next/link";
 import { useState } from "react";
 import Slider from "react-slick";
 const bannerHome = "/images/banner-home.png";
-
+// const Width = window.innerWidth;
+// const Height = window.innerHeight;
 export default function Home() {
   var settings = {
     dots: true,
@@ -20,38 +21,10 @@ export default function Home() {
     <>
       <section>
         <Slider {...settings}>
-          <div className="bg-black" style={{ minHeight: "600px" }}>
-            <img
-              src={bannerHome}
-              className="w-full"
-              style={{ maxHeight: "80vh", objectFit: "cover" }}
-              alt="logo"
-            />
-          </div>
-          <div className="bg-black" style={{ minHeight: "600px" }}>
-            <img
-              src={bannerHome}
-              className="w-full"
-              style={{ maxHeight: "80vh", objectFit: "cover" }}
-              alt="logo"
-            />
-          </div>
-          <div className="bg-black" style={{ minHeight: "600px" }}>
-            <img
-              src={bannerHome}
-              className="w-full"
-              style={{ maxHeight: "80vh", objectFit: "cover" }}
-              alt="logo"
-            />
-          </div>
-          <div className="bg-black" style={{ minHeight: "600px" }}>
-            <img
-              src={bannerHome}
-              className="w-full"
-              style={{ maxHeight: "80vh", objectFit: "cover" }}
-              alt="logo"
-            />
-          </div>
+          <ImageItem />
+          <ImageItem />
+          <ImageItem />
+          <ImageItem />
         </Slider>
       </section>
       <Container>
@@ -75,11 +48,11 @@ export default function Home() {
           <p className="text-gray-800 text-md md:text-lg mt-2 mb-6">
             Start Personalizing Your Keyboard Today
           </p>
-          <ButtonPrimary>Get Started Now</ButtonPrimary>
+          <ButtonPrimary>Shoping Now</ButtonPrimary>
         </section>
         <section className="my-16">
           <h2 className="text-gray-900 text-center font-bold text-2xl">
-            Best Seller
+            Most Popular
           </h2>
           <p className="text-gray-800 text-center">
             Discover our most popular and top-rated products that customers
@@ -91,7 +64,7 @@ export default function Home() {
             <CardProduct title="KEYBOARD FULL-SIZE" />
           </div>
           <div className="flex justify-center w-full mt-6">
-            <ButtonPrimary>Get Started Now</ButtonPrimary>
+            <ButtonPrimary>Learn More</ButtonPrimary>
           </div>
         </section>
         <section className="my-16">
@@ -109,16 +82,23 @@ export default function Home() {
 }
 const CardCategory = (props) => (
   <Link href={props.href || "#"} className="relative w-full">
-    <img
-      src={props.img || bannerHome}
-      className="w-full"
-      style={{ maxHeight: "100px", objectFit: "cover" }}
-      alt="logo"
-    />
+    <ImageItem />
     <div className="absolute hover:backdrop-blur-sm bg-black bg-opacity-60 top-0 z-10 w-full h-full flex justify-center items-center p-4">
       <p className="md:font-medium text-sm md:text-xl">
         {props.title || "Title"}
       </p>
     </div>
   </Link>
+);
+const ImageItem = () => (
+  <Image
+    src={bannerHome}
+    width={0}
+    height={0}
+    sizes="100%"
+    style={{ width: "100%", objectFit: "cover" }}
+    placeholder="blur"
+    blurDataURL="data:..."
+    alt="image"
+  />
 );
