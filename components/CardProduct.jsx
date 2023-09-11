@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const CardProduct = ({ data }) => (
+const CardProduct = ({ data, index }) => (
   <Link
-    href={data.href || "/detail-product"}
+    href={data.href || `/detail-product?id=${index}`}
     className="hover:scale-105 w-100 relative"
   >
     <Image

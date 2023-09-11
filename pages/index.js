@@ -36,7 +36,12 @@ export default function Home() {
           </h2> */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {category_dummy.map((item, index) => (
-              <CardCategory key={index} title={item.name} url={item.url} />
+              <CardCategory
+                key={index}
+                title={item.name}
+                url={item.url}
+                href={`/shop#${item.name}`}
+              />
             ))}
           </div>
         </section>
@@ -54,7 +59,7 @@ export default function Home() {
             <p className="text-white-800 text-md md:text-lg mt-2 mb-6">
               Start Personalizing Your Keyboard Today
             </p>
-            <ButtonPrimary>Shoping Now</ButtonPrimary>
+            <ButtonPrimary>Get Started</ButtonPrimary>
           </div>
         </section>
         <section className="my-16">
@@ -66,7 +71,9 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
             {dummy_products.map((item, index) =>
-              index >= 4 ? null : <CardProduct key={index} data={item} />
+              index >= 4 ? null : (
+                <CardProduct key={index} data={item} index={index} />
+              )
             )}
           </div>
           <div className="flex justify-center w-full mt-6">

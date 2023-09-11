@@ -20,38 +20,27 @@ const subCategories = [
 ];
 const filters = [
   {
-    id: "color",
-    name: "Color",
-    options: [
-      { value: "white", label: "White", checked: false },
-      { value: "beige", label: "Beige", checked: false },
-      { value: "blue", label: "Blue", checked: true },
-      { value: "brown", label: "Brown", checked: false },
-      { value: "green", label: "Green", checked: false },
-      { value: "purple", label: "Purple", checked: false },
-    ],
-  },
-  {
     id: "category",
     name: "Category",
     options: [
-      { value: "new-arrivals", label: "New Arrivals", checked: false },
-      { value: "sale", label: "Sale", checked: false },
-      { value: "travel", label: "Travel", checked: true },
-      { value: "organization", label: "Organization", checked: false },
-      { value: "accessories", label: "Accessories", checked: false },
+      { value: "gaming-keyboards", label: "Gaming Keyboard", checked: true },
+      { value: "compact-keyboard", label: "Compact Keyboard", checked: true },
+      { value: "artisan-keyboard", label: "Artisan Keyboard", checked: true },
+      { value: "wireless-keyboard", label: "WirelessKeyboard", checked: true },
     ],
   },
   {
-    id: "size",
-    name: "Size",
+    id: "customize",
+    name: "Customize",
+    options: [{ value: "yes", label: "yes", checked: false }],
+  },
+  {
+    id: "switch",
+    name: "Switch",
     options: [
-      { value: "2l", label: "2L", checked: false },
-      { value: "6l", label: "6L", checked: false },
-      { value: "12l", label: "12L", checked: false },
-      { value: "18l", label: "18L", checked: false },
-      { value: "20l", label: "20L", checked: false },
-      { value: "40l", label: "40L", checked: true },
+      { value: "brown", label: "Brown Switch", checked: false },
+      { value: "red", label: "Red Switch", checked: false },
+      { value: "blue", label: "Blue Switch", checked: false },
     ],
   },
 ];
@@ -62,7 +51,7 @@ function classNames(...classes) {
 
 export default function shop() {
   return (
-    <div className="bg-white">
+    <div className="bg-white p-10 pt-20">
       <div>
         <MobileFilteringDialogue />
         <Container>
@@ -208,7 +197,7 @@ export default function shop() {
             <div className="lg:col-span-3">
               <div className="col-span-3 w-100 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 gap-y-10">
                 {dummy_products.map((item, index) => (
-                  <CardProduct data={item} key={index} />
+                  <CardProduct data={item} key={index} index={index} />
                 ))}
               </div>
             </div>

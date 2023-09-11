@@ -1,17 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 const bannerHome = "/images/banner-home.png";
 const dummy_products = require("@/public/json-dummy/product.json");
 
-const detailProduct = () => {
-  const data = dummy_products[0];
+const DetailProduct = () => {
+  const router = useRouter();
+  const { id } = router.query;
+
+  const data = dummy_products[id];
   console.log(data);
   if (!data) {
     return <p>Loading...</p>;
   }
   return (
-    <section className="text-gray-700 body-font overflow-hidden bg-white">
+    <section className="text-gray-700 body-font overflow-hidden bg-white px-4">
       <div className=" py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <Image
@@ -64,13 +68,13 @@ const detailProduct = () => {
                 </div>
               </div>
             </div>
-            <div className="flex">
+            <div className="flex justify-between items-center">
               <span className="title-font font-medium text-2xl text-gray-900">
                 $58.00
               </span>
               {data.Customize ? (
                 <Link href="/custom-keyboard">
-                  <button className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
+                  <button className="flex ml-auto text-white bg-orange-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
                     Configure
                   </button>
                 </Link>
@@ -87,4 +91,4 @@ const detailProduct = () => {
   );
 };
 
-export default detailProduct;
+export default DetailProduct;
