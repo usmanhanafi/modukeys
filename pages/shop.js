@@ -3,6 +3,7 @@ import Container from "@/components/layouts/Container";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { Icon } from "@iconify/react";
 import { useState, Fragment } from "react";
+const dummy_products = require("@/public/json-dummy/product.json");
 
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
@@ -206,12 +207,9 @@ export default function shop() {
             {/* Product grid */}
             <div className="lg:col-span-3">
               <div className="col-span-3 w-100 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 gap-y-10">
-                <CardProduct />
-                <CardProduct />
-                <CardProduct />
-                <CardProduct />
-                <CardProduct />
-                <CardProduct />
+                {dummy_products.map((item, index) => (
+                  <CardProduct data={item} key={index} />
+                ))}
               </div>
             </div>
           </section>

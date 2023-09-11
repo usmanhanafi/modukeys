@@ -1,11 +1,18 @@
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+import React, { useState } from "react";
 const bannerHome = "/images/banner-home.png";
+const dummy_products = require("@/public/json-dummy/product.json");
 
 const detailProduct = () => {
+  const data = dummy_products[0];
+  console.log(data);
+  if (!data) {
+    return <p>Loading...</p>;
+  }
   return (
     <section className="text-gray-700 body-font overflow-hidden bg-white">
-      <div className=" pb-24 pt-10 mx-auto">
+      <div className=" py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <Image
             alt="modukeys"
@@ -15,23 +22,16 @@ const detailProduct = () => {
             className="lg:w-1/2 w-full h-full object-cover object-center rounded border border-gray-200"
             placeholder="blur"
             blurDataURL="data:..."
-            src={bannerHome}
+            src={data.img}
           />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">
-              BRAND NAME
+              {data.Category}
             </h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-              The Catcher in the Rye
+              {data.Title}
             </h1>
-            <p className="leading-relaxed">
-              Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-              sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo
-              juiceramps cornhole raw denim forage brooklyn. Everyday carry +1
-              seitan poutine tumeric. Gastropub blue bottle austin listicle
-              pour-over, neutra jean shorts keytar banjo tattooed umami
-              cardigan.
-            </p>
+            <p className="leading-relaxed">{data.Description}</p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
               <div className="flex">
                 <span className="mr-3">Switch</span>
@@ -68,9 +68,17 @@ const detailProduct = () => {
               <span className="title-font font-medium text-2xl text-gray-900">
                 $58.00
               </span>
-              <button className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
-                Add To Cart
-              </button>
+              {data.Customize ? (
+                <Link href="/custom-keyboard">
+                  <button className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
+                    Configure
+                  </button>
+                </Link>
+              ) : (
+                <button className="flex ml-auto text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
+                  Add To Cart
+                </button>
+              )}
             </div>
           </div>
         </div>

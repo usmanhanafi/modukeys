@@ -4,15 +4,17 @@ import Container from "@/components/layouts/Container";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 const bannerHome = "/images/banner-home.png";
-// const Width = window.innerWidth;
-// const Height = window.innerHeight;
+const dummy_products = require("@/public/json-dummy/product.json");
+const category_dummy = require("@/public/json-dummy/category.json");
+
 export default function Home() {
   var settings = {
-    dots: true,
+    dots: false,
     infinite: true,
+    arrows: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -21,10 +23,10 @@ export default function Home() {
     <>
       <section>
         <Slider {...settings}>
-          <ImageItem />
-          <ImageItem />
-          <ImageItem />
-          <ImageItem />
+          <ImageBannerSlider />
+          <ImageBannerSlider />
+          <ImageBannerSlider />
+          <ImageBannerSlider />
         </Slider>
       </section>
       <Container>
@@ -33,22 +35,27 @@ export default function Home() {
             Category
           </h2> */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            <CardCategory title="KEYBOARD FULL-SIZE" />
-            <CardCategory title="KEYBOARD FULL-SIZE" />
-            <CardCategory title="KEYBOARD FULL-SIZE" />
-            <CardCategory title="KEYBOARD FULL-SIZE" />
+            {category_dummy.map((item, index) => (
+              <CardCategory key={index} title={item.name} url={item.url} />
+            ))}
           </div>
         </section>
-        <section className="my-5 text-center p-4 md:p-24 bg-gray-300">
-          <p className="text-gray-700 text-sm md:text-md">Customize</p>
-          <h2 className="text-gray-900 text-2xl md:text-4xl font-semibold">
-            {" "}
-            Customize Your Typing Experience
-          </h2>
-          <p className="text-gray-800 text-md md:text-lg mt-2 mb-6">
-            Start Personalizing Your Keyboard Today
-          </p>
-          <ButtonPrimary>Shoping Now</ButtonPrimary>
+        <section
+          className="my-5 text-center"
+          style={{
+            backgroundImage: `url("/images/pedro-costa-aXY5doQNZTc-unsplash.jpg")`,
+          }}
+        >
+          <div className="backdrop-blur w-full h-full p-4 md:p-24">
+            <p className="text-white-700 text-sm md:text-md">Customize</p>
+            <h2 className="text-white-900 text-2xl md:text-4xl font-semibold">
+              Customize Your Typing Experience
+            </h2>
+            <p className="text-white-800 text-md md:text-lg mt-2 mb-6">
+              Start Personalizing Your Keyboard Today
+            </p>
+            <ButtonPrimary>Shoping Now</ButtonPrimary>
+          </div>
         </section>
         <section className="my-16">
           <h2 className="text-gray-900 text-center font-bold text-2xl">
@@ -57,17 +64,18 @@ export default function Home() {
           <p className="text-gray-800 text-center">
             Discover our most popular and top-rated products that customers
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-4">
-            <CardProduct title="KEYBOARD FULL-SIZE" />
-            <CardProduct title="KEYBOARD FULL-SIZE" />
-            <CardProduct title="KEYBOARD FULL-SIZE" />
-            <CardProduct title="KEYBOARD FULL-SIZE" />
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+            {dummy_products.map((item, index) =>
+              index >= 4 ? null : <CardProduct key={index} data={item} />
+            )}
           </div>
           <div className="flex justify-center w-full mt-6">
-            <ButtonPrimary>Learn More</ButtonPrimary>
+            <Link href="/shop">
+              <ButtonPrimary>Learn More</ButtonPrimary>
+            </Link>
           </div>
         </section>
-        <section className="my-16">
+        {/* <section className="my-16">
           <h2 className="text-gray-900 text-center font-bold text-2xl">
             Edukeys
           </h2>
@@ -75,14 +83,27 @@ export default function Home() {
             Discover our most popular and top-rated products that customers
           </p>
           <div className="relative grid grid-cols-2 gap-4"></div>
-        </section>
+        </section> */}
       </Container>
     </>
   );
 }
 const CardCategory = (props) => (
   <Link href={props.href || "#"} className="relative w-full">
-    <ImageItem />
+    <Image
+      src={props.url}
+      width={0}
+      height={0}
+      sizes="100%"
+      style={{
+        width: "100%",
+        height: 100,
+        objectFit: "cover",
+      }}
+      placeholder="blur"
+      blurDataURL="data:..."
+      alt="image"
+    />
     <div className="absolute hover:backdrop-blur-sm bg-black bg-opacity-60 top-0 z-10 w-full h-full flex justify-center items-center p-4">
       <p className="md:font-medium text-sm md:text-xl">
         {props.title || "Title"}
@@ -90,13 +111,33 @@ const CardCategory = (props) => (
     </div>
   </Link>
 );
-const ImageItem = () => (
+const ImageBannerSlider = (...props) => (
   <Image
     src={bannerHome}
     width={0}
     height={0}
     sizes="100%"
-    style={{ width: "100%", objectFit: "cover" }}
+    style={{
+      width: "100%",
+      height: "60vh",
+      objectFit: "cover",
+    }}
+    placeholder="blur"
+    blurDataURL="data:..."
+    alt="image"
+  />
+);
+const ImageItem = (...props) => (
+  <Image
+    src={bannerHome}
+    width={0}
+    height={0}
+    sizes="100%"
+    style={{
+      width: "100%",
+      height: props.height || "100%",
+      objectFit: "cover",
+    }}
     placeholder="blur"
     blurDataURL="data:..."
     alt="image"

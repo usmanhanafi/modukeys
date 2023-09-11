@@ -1,0 +1,162 @@
+[
+  {
+    "Category": "Gaming Keyboards",
+    "Title": "ModuKeys Pro X1 Gaming Keyboard",
+    "Description": "Elevate your gaming experience with the ModuKeys Pro X1. Featuring ultra-responsive mechanical switches, customizable RGB backlighting, and a sleek modern design, this keyboard ensures superior performance and unmatched style.",
+    "Price": 159.99,
+    "img": "/images/motiur-rahman-shakil-mpU7fYbH2-s-unsplash.jpg",
+    "Customize": true,
+    "Specifications": {
+      "Mechanical Switch": "Cherry MX Red",
+      "RGB Backlight": "Customizable with 16.8 million colors",
+      "Key Rollover": "N-key rollover",
+      "Connectivity": "Wired USB",
+      "Dimensions": "17.3\" x 5.1\" x 1.4\"",
+      "Weight": "2.2 lbs"
+    }
+  },
+  {
+    "Category": "Compact Keyboards",
+    "Title": "ModuKeys Compact 75% Keyboard",
+    "Description": "Experience the perfect balance of compactness and functionality with the ModuKeys Compact 75%. This keyboard offers a space-saving design without compromising on key features, making it ideal for both work and play.",
+    "Price": 129.99,
+    "img": "/images/jay-zhang-mFtcZzLruCQ-unsplash.jpg",
+    "Customize": false,
+    "Specifications": {
+      "Mechanical Switch": "Gateron Brown",
+      "RGB Backlight": "10 preset lighting modes",
+      "Key Rollover": "100% anti-ghosting",
+      "Connectivity": "Detachable USB-C cable",
+      "Dimensions": "14.1\" x 4.1\" x 1.2\"",
+      "Weight": "1.6 lbs"
+    }
+  },
+  {
+    "Category": "Artisan Keyboards",
+    "Title": "ModuKeys Artisan Series Custom Keyboard",
+    "Description": "Unleash your creativity with the ModuKeys Artisan Series. Choose from a variety of artistic designs and customize your keyboard to reflect your individual style. Enjoy a keyboard that's not only functional but also a work of art.",
+    "Price": 199.99,
+    "img": "/images/andrey-matveev-FPvGiqoZOdE-unsplash.jpg",
+    "Customize": true,
+    "Specifications": {
+      "Mechanical Switch": "Kailh Box White",
+      "Artisan Keycaps": "Unique designs",
+      "Key Rollover": "6-key rollover",
+      "Connectivity": "Wired USB",
+      "Dimensions": "15.7\" x 5.5\" x 1.4\"",
+      "Weight": "2.0 lbs"
+    }
+  },
+  {
+    "Category": "Wireless Keyboards",
+    "Title": "ModuKeys Wireless Pro Typist Keyboard",
+    "Description": "Achieve typing excellence with the ModuKeys Wireless Pro Typist. Enjoy the convenience of wireless connectivity, whisper-quiet mechanical switches, and a minimalist design that complements any workspace.",
+    "Price": 179.99,
+    "img": "/images/pedro-costa-aXY5doQNZTc-unsplash.jpg",
+    "Customize": false,
+    "Specifications": {
+      "Mechanical Switch": "Cherry MX Brown",
+      "Wireless Connectivity": "Bluetooth 5.0",
+      "Battery Life": "Up to 40 hours on a single charge",
+      "Key Rollover": "Full N-key rollover",
+      "Dimensions": "16.5\" x 6.3\" x 1.2\"",
+      "Weight": "2.4 lbs"
+    }
+  },
+  {
+    "Category": "Compact Keyboards",
+    "Title": "ModuKeys Ultra Compact 60% Mechanical Keyboard",
+    "Description": "Embrace the ultimate in portability with the ModuKeys Ultra Compact 60%. This keyboard is perfect for on-the-go professionals and enthusiasts who demand top-notch mechanical performance in a compact form factor.",
+    "Price": 109.99,
+    "img": "/images/krishdiphong-prayoonwongkasem-oxRLqxQ9v8o-unsplash.jpg",
+    "Customize": true,
+    "Specifications": {
+      "Mechanical Switch": "Gateron Blue",
+      "Compact Layout": "60% of a full-size keyboard",
+      "Key Rollover": "100% anti-ghosting",
+      "Connectivity": "Detachable USB-C cable",
+      "Dimensions": "11.6\" x 4.0\" x 1.2\"",
+      "Weight": "1.3 lbs"
+    }
+  },
+  {
+    "Category": "Gaming Keyboards",
+    "Title": "ModuKeys Gamer Xtreme RGB Keyboard",
+    "Description": "Dominate your gaming sessions with the ModuKeys Gamer Xtreme. Featuring dynamic RGB backlighting, ultra-responsive mechanical switches, and customizable macros, this keyboard is built for victory.",
+    "Price": 149.99,
+    "img": "/images/pedro-costa-aXY5doQNZTc-unsplash.jpg",
+    "Customize": true,
+    "Specifications": {
+      "Mechanical Switch": "Razer Green",
+      "RGB Backlight": "Customizable with 16.8 million colors",
+      "Key Rollover": "N-key rollover",
+      "Connectivity": "Wired USB",
+      "Dimensions": "17.5\" x 5.2\" x 1.6\"",
+      "Weight": "2.5 lbs"
+    }
+  },
+  {
+    "Category": "Compact Keyboards",
+    "Title": "ModuKeys Compact 80% Bluetooth Keyboard",
+    "Description": "Experience the perfect blend of portability and versatility with the ModuKeys Compact 80% Bluetooth Keyboard. Connect to multiple devices wirelessly and enjoy mechanical precision wherever you go.",
+    "Price": 139.99,
+    "img": "/images/pedro-costa-aXY5doQNZTc-unsplash.jpg",
+    "Customize": false,
+    "Specifications": {
+      "Mechanical Switch": "Gateron Red",
+      "Wireless Connectivity": "Bluetooth 4.2",
+      "Battery Life": "Up to 30 hours on a single charge",
+      "Key Rollover": "Full N-key rollover",
+      "Dimensions": "14.8\" x 4.6\" x 1.2\"",
+      "Weight": "1.7 lbs"
+    }
+  },
+  {
+    "Category": "Wireless Keyboards",
+    "Title": "ModuKeys Wireless Ergonomic Keyboard",
+    "Description": "Experience ergonomic comfort without compromising on performance with the ModuKeys Wireless Ergonomic Keyboard. Wireless connectivity, tactile mechanical switches, and a split layout for enhanced typing comfort.",
+    "Price": 169.99,
+    "img": "/images/pedro-costa-aXY5doQNZTc-unsplash.jpg",
+    "Customize": false,
+    "Specifications": {
+      "Mechanical Switch": "Cherry MX Brown",
+      "Wireless Connectivity": "2.4 GHz RF USB receiver",
+      "Battery Life": "Up to 60 hours on a single charge",
+      "Key Rollover": "Full N-key rollover",
+      "Dimensions": "18.2\" x 8.5\" x 1.5\"",
+      "Weight": "2.9 lbs"
+    }
+  },
+  {
+    "Category": "Artisan Keyboards",
+    "Title": "ModuKeys Artisan Series Minimalist Keyboard",
+    "Description": "Experience simplicity and elegance with the ModuKeys Artisan Series Minimalist Keyboard. With its clean design and choice of tactile mechanical switches, this keyboard is a statement of minimalist sophistication.",
+    "Price": 189.99,
+    "img": "/images/pedro-costa-aXY5doQNZTc-unsplash.jpg",
+    "Customize": false,
+    "Specifications": {
+      "Mechanical Switch": "Cherry MX Clear",
+      "Keycaps": "Minimalist style keycaps",
+      "Key Rollover": "6-key rollover",
+      "Connectivity": "Wired USB",
+      "Dimensions": "16.9\" x 5.3\" x 1.1\"",
+      "Weight": "2.1 lbs"
+    }
+  },
+  {
+    "Category": "Compact Keyboards",
+    "Title": "ModuKeys Compact 60% Wireless Mechanical Keyboard",
+    "Description": "Unchain your productivity with the ModuKeys Compact 60% Wireless Mechanical Keyboard. Enjoy the freedom of wireless connectivity and the precision of mechanical switches in a compact, portable package.",
+    "Price": 119.99,
+    "img": "/images/pedro-costa-aXY5doQNZTc-unsplash.jpg",
+    "Customize": true,
+    "Specifications": {
+      "Mechanical Switch": "Gateron Brown",
+      "Wireless Connectivity": "Bluetooth 5.1",
+      "Battery Life": "Up to 50 hours on a single charge",
+      "Key Rollover": "100% anti-ghosting",
+      "Dimensions": "11.4\" x 3.9\" x 1.2\"",
+      "Weight": "1.4 lbs"
+    }
+  }
+]

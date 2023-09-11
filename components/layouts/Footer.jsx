@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -17,52 +18,39 @@ const Footer = () => {
               />
             </a>
             <p className="text-white text-md text-opacity-75 mt-3 max-w-sm">
-              Kami memadukan inovasi teknologi terdepan dengan sentuhan seni
-              yang unik, memungkinkan Anda untuk merancang keyboard sesuai
-              dengan gaya dan preferensi Anda. Di ModuKeys, kami merayakan
-              keindahan mekanisme keyboard dan memberikan Anda kendali penuh
-              untuk menciptakan pengalaman mengetik yang sempurna. Bergabunglah
-              dengan kami dan temukan masa depan mengetik yang tak terbatas
+              We combine cutting-edge technology innovation with a unique
+              artistic touch, allowing you to design a keyboard that matches
+              your style and preferences. At ModuKeys, we celebrate the beauty
+              of keyboard mechanisms and give you full control to create the
+              perfect typing experience. Join us and discover an endless future
+              of typing
             </p>
           </div>
-          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
             <div>
               <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Resources
+                Category
               </h2>
               <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                <li class="mb-4">
-                  <a href="https://flowbite.com/" class="hover:underline">
-                    Flowbite
-                  </a>
+                <li>
+                  <Link href="/shop#keyboard-full-size">
+                    <p>Keyboard Full-Size</p>
+                  </Link>
                 </li>
                 <li>
-                  <a href="https://tailwindcss.com/" class="hover:underline">
-                    Tailwind CSS
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Follow us
-              </h2>
-              <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                <li class="mb-4">
-                  <a
-                    href="https://github.com/themesberg/flowbite"
-                    class="hover:underline "
-                  >
-                    Github
-                  </a>
+                  <Link href="/shop#tkl-keyboard">
+                    <p>Tenkeyless (TKL) Keyboard</p>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://discord.gg/4eeurUVvTy"
-                    class="hover:underline"
-                  >
-                    Discord
-                  </a>
+                  <Link href="/shop#gaming-keyboard">
+                    <p>Gaming Keyboard</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/shop#customizable-keyboard">
+                    <p>Customizable Keyboard</p>
+                  </Link>
                 </li>
               </ul>
             </div>

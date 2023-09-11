@@ -7,7 +7,7 @@ const imgLogo = "/logo-line.svg";
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <nav className="flex flex-wrap items-center justify-between px-2 py-3 bg-white z-100 w-full">
+    <nav className="flex flex-wrap items-center justify-between px-2 py-3 bg-white z-100 w-full fixed z-20 bg-opacity-80 backdrop-blur">
       <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <Link
@@ -47,22 +47,22 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                href="#customize-modukeys"
+                href="/custom-keyboard"
               >
                 <i className="fab fa-twitter text-lg leading-lg text-black opacity-75"></i>
                 <span className="ml-2">Modukeys By you</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                 href="#blog"
               >
                 <i className="fab fa-pinterest text-lg leading-lg text-black opacity-75"></i>
                 <span className="ml-2">Blog</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
