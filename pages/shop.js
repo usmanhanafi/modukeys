@@ -3,6 +3,7 @@ import Container from "@/components/layouts/Container";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { Icon } from "@iconify/react";
 import Head from "next/head";
+import Link from "next/link";
 import { useState, Fragment } from "react";
 const dummy_products = require("@/public/json-dummy/product.json");
 
@@ -100,7 +101,7 @@ export default function shop() {
                         {sortOptions.map((option) => (
                           <Menu.Item key={option.name}>
                             {({ active }) => (
-                              <a
+                              <Link
                                 href={option.href}
                                 className={classNames(
                                   option.current
@@ -111,7 +112,7 @@ export default function shop() {
                                 )}
                               >
                                 {option.name}
-                              </a>
+                              </Link>
                             )}
                           </Menu.Item>
                         ))}
@@ -270,9 +271,9 @@ const MobileFilteringDialogue = () => {
                 <ul role="list" className="px-2 py-3 font-medium text-gray-900">
                   {subCategories.map((category) => (
                     <li key={category.name}>
-                      <a href={category.href} className="block px-2 py-3">
+                      <Link href={category.href} className="block px-2 py-3">
                         {category.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
