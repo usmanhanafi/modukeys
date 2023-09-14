@@ -8,10 +8,7 @@ const CardProduct = ({ data, index }) => (
     className="hover:scale-105 w-100 relative"
   >
     <Image
-      src={data.img || "/images/banner-home.png"}
-      // className="w-full h-full"
-      // style={{ height: 240, objectFit: "cover" }}
-      // layout="fill"
+      src={data.img}
       alt="product"
       width={0}
       height={0}

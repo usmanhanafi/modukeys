@@ -2,6 +2,7 @@ import ButtonPrimary from "@/components/ButtonPrimary";
 import CardProduct from "@/components/CardProduct";
 import Container from "@/components/layouts/Container";
 import { Icon } from "@iconify/react";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { Report } from "notiflix";
@@ -23,15 +24,27 @@ export default function Home() {
   // }, []);
 
   var settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     arrows: false,
     speed: 500,
+    autoplaySpeed: 2000,
+    autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
   return (
     <>
+      <Head>
+        <meta
+          name="description"
+          content="Elevate your typing experience with ModuKeys mechanical keyboards. Explore a wide range of high-performance keyboards, customizable designs, and cutting-edge technology. Upgrade your typing game with ModuKeys today."
+        />
+        <meta
+          name="keywords"
+          content="ModuKeys, mechanical keyboards, high-performance keyboards, customizable keyboards, typing experience"
+        />
+      </Head>
       <section>
         <Slider {...settings}>
           <ImageBannerSlider
@@ -75,7 +88,7 @@ export default function Home() {
         <section
           className="my-5 text-center bg-no-repeat bg-cover bg-center"
           style={{
-            backgroundImage: `url("/images/motiur-rahman-shakil-mpU7fYbH2-s-unsplash.jpg")`,
+            backgroundImage: `url("/images/motiur-rahman-shakil-mpU7fYbH2-s-unsplash.webp")`,
           }}
         >
           <div className="backdrop-blur-sm w-full h-full p-4 md:p-24">

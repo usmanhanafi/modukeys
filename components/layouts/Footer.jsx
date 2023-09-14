@@ -33,22 +33,22 @@ const Footer = () => {
               </h2>
               <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li>
-                  <Link href="/shop#keyboard-full-size">
+                  <Link href="/shop">
                     <p>Keyboard Full-Size</p>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/shop#tkl-keyboard">
+                  <Link href="/shop">
                     <p>Tenkeyless (TKL) Keyboard</p>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/shop#gaming-keyboard">
+                  <Link href="/shop">
                     <p>Gaming Keyboard</p>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/shop#customizable-keyboard">
+                  <Link href="/shop">
                     <p>Customizable Keyboard</p>
                   </Link>
                 </li>
