@@ -13,19 +13,26 @@ const sortOptions = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+const backgroundHero = "/images/andrey-matveev-FPvGiqoZOdE-unsplash.jpg";
+
 const ModukeysByYou = () => {
   return (
     <main>
-      <div className="pt-40 pb-24 w-full h-32 bg-gray-500 flex flex-col justify-center items-center">
-        <h1 className="md:text-3xl font-semibold">
-          Customize Your Typing Experience
-        </h1>
-        <p className="text-lg opacity-80">
-          Start Personalizing Your Keyboard Today
-        </p>
+      <div
+        className="w-full h-32 bg-left"
+        style={{ backgroundImage: `url(${backgroundHero})` }}
+      >
+        <div className="pt-32 pb-10 backdrop-blur-lg flex flex-col justify-center items-center">
+          <h1 className="text-gray-900 md:text-3xl font-semibold">
+            Customize Your Typing Experience
+          </h1>
+          <p className="text-gray-900 text-lg opacity-80">
+            Start Personalizing Your Keyboard Today
+          </p>
+        </div>
       </div>
       <Container>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-24">
           <h2 className="text-gray-900 font-medium text-lg mt-5">
             Customable Keyboards
           </h2>

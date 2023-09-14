@@ -4,13 +4,24 @@ import Container from "@/components/layouts/Container";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
+import { Report } from "notiflix";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
-const bannerHome = "/images/banner-home.png";
+const bannerHome = "/images/banner-home-01.webp";
+const bannerHome1 = "/images/banner-home-01.webp";
+const bannerHome2 = "/images/banner-home-02.webp";
 const dummy_products = require("@/public/json-dummy/product.json");
 const category_dummy = require("@/public/json-dummy/category.json");
 
 export default function Home() {
+  // useEffect(() => {
+  //   Report.info(
+  //     "Coming Soon",
+  //     "Shopping Cart Feature Under Development",
+  //     "Okay"
+  //   );
+  // }, []);
+
   var settings = {
     dots: false,
     infinite: true,
@@ -23,10 +34,26 @@ export default function Home() {
     <>
       <section>
         <Slider {...settings}>
-          <ImageBannerSlider />
-          <ImageBannerSlider />
-          <ImageBannerSlider />
-          <ImageBannerSlider />
+          <ImageBannerSlider
+            img={bannerHome1}
+            cta="/shop"
+            title="Elevate Your Typing Experience with ModuKeys!"
+            desc="Experience the ultimate typing performance with ModuKeys mechanical
+          keyboards. Unleash your creativity with customizable designs,
+          ultra-responsive switches, and superior quality. Don't miss
+          out-upgrade to ModuKeys today!"
+            color="white"
+          />
+          <ImageBannerSlider
+            img={bannerHome2}
+            cta="/shop"
+            title="Elevate Your Typing Experience with ModuKeys!"
+            desc="Experience the ultimate typing performance with ModuKeys mechanical
+          keyboards. Unleash your creativity with customizable designs,
+          ultra-responsive switches, and superior quality. Don't miss
+          out-upgrade to ModuKeys today!"
+            color="black"
+          />
         </Slider>
       </section>
       <Container>
@@ -46,12 +73,12 @@ export default function Home() {
           </div>
         </section>
         <section
-          className="my-5 text-center"
+          className="my-5 text-center bg-no-repeat bg-cover bg-center"
           style={{
-            backgroundImage: `url("/images/pedro-costa-aXY5doQNZTc-unsplash.jpg")`,
+            backgroundImage: `url("/images/motiur-rahman-shakil-mpU7fYbH2-s-unsplash.jpg")`,
           }}
         >
-          <div className="backdrop-blur w-full h-full p-4 md:p-24">
+          <div className="backdrop-blur-sm w-full h-full p-4 md:p-24">
             <p className="text-white-700 text-sm md:text-md">Customize</p>
             <h2 className="text-white-900 text-2xl md:text-4xl font-semibold">
               Customize Your Typing Experience
@@ -59,17 +86,19 @@ export default function Home() {
             <p className="text-white-800 text-md md:text-lg mt-2 mb-6">
               Start Personalizing Your Keyboard Today
             </p>
-            <ButtonPrimary>Get Started</ButtonPrimary>
+            <Link href="/modukeys-by-you">
+              <ButtonPrimary bg="orange-500">Get Started</ButtonPrimary>
+            </Link>
           </div>
         </section>
         <section className="my-16">
-          <h2 className="text-gray-900 text-center font-bold text-2xl">
+          <h2 className="text-gray-800 text-center font-bold text-2xl">
             Most Popular
           </h2>
           <p className="text-gray-800 text-center">
             Discover our most popular and top-rated products that customers
           </p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
             {dummy_products.map((item, index) =>
               index >= 4 ? null : (
                 <CardProduct key={index} data={item} index={index} />
@@ -118,21 +147,44 @@ const CardCategory = (props) => (
     </div>
   </Link>
 );
-const ImageBannerSlider = (...props) => (
-  <Image
-    src={bannerHome}
-    width={0}
-    height={0}
-    sizes="100%"
-    style={{
-      width: "100%",
-      height: "60vh",
-      objectFit: "cover",
-    }}
-    placeholder="blur"
-    blurDataURL="data:..."
-    alt="image"
-  />
+const ImageBannerSlider = (props) => (
+  <div className="relative w-full">
+    <Image
+      src={props.img}
+      width={0}
+      height={0}
+      sizes="100%"
+      style={{
+        width: "100%",
+        height: "100vh",
+        objectFit: "cover",
+      }}
+      placeholder="blur"
+      blurDataURL="data:..."
+      alt="image"
+    />
+    <div className="absolute top-0 w-full h-full z-10 pt-16">
+      <div className=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-start ">
+        <h1
+          className={`leading-snug text-3xl md:text-4xl lg:text-5xl font-semibold uppercase lg:max-w-xl text-${
+            props.color || "white"
+          }`}
+        >
+          {props.title}
+        </h1>
+        <p
+          className={`leading-loose text-sm lg:text-md opacity-80 lg:max-w-xl mt-4 mb-6 text-${
+            props.color || "white"
+          }`}
+        >
+          {props.desc}
+        </p>
+        <Link href={props.cta}>
+          <ButtonPrimary>Get Started Now</ButtonPrimary>
+        </Link>
+      </div>
+    </div>
+  </div>
 );
 const ImageItem = (...props) => (
   <Image
