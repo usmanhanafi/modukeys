@@ -27,11 +27,11 @@ const Navbar = () => {
           >
             <Image src={imgLogo} priority width="120" height="32" alt="logo" />
           </Link>
-          <button
-            onClick={() => setNavbarOpen(!navbarOpen)}
-            className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-          >
-            {navbarOpen ? (
+          {navbarOpen ? (
+            <button
+              onClick={() => setNavbarOpen(!navbarOpen)}
+              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -46,7 +46,12 @@ const Navbar = () => {
                   d="M6 18L18 6m0 12L6 6"
                 />
               </svg>
-            ) : (
+            </button>
+          ) : (
+            <button
+              onClick={() => setNavbarOpen(!navbarOpen)}
+              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -58,13 +63,13 @@ const Navbar = () => {
                   d="M3 18v-2h18v2H3Zm0-5v-2h18v2H3Zm0-5V6h18v2H3Z"
                 />
               </svg>
-            )}
-          </button>
+            </button>
+          )}
         </div>
         <div
           className={
-            "lg:flex items-center" +
-            (navbarOpen ? " flex justify-center" : " hidden")
+            "lg:flex items-center w-100 md:w-auto" +
+            (navbarOpen ? " flex justify-center " : " hidden")
           }
         >
           <ul className="flex flex-col md:items-center lg:flex-row list-none lg:ml-auto w-full md:w-auto">

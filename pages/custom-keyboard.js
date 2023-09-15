@@ -97,10 +97,10 @@ const CustomKeyboard = () => {
               <div className="w-full pt-4 mx-auto flex flex-wrap justify-center md:justify-start">
                 <div className="w-full h-[70vh] object-cover object-center border border-gray-200 relative">
                   <div className="absolute left-4 top-4 z-10 backdrop-blur">
-                    <h1 className="text-gray-900 font-semibold text-sm md:text-lg">
+                    <h1 className="text-gray-900 font-semibold text-sm md:text-lg max-w-[80%] sm:max-w-[100%]">
                       ModuKeys Pro X1 Gaming Keyboard
                     </h1>
-                    <p className="text-gray-600 font-medium text-sm md:text-md">
+                    <p className="text-gray-600 font-medium text-sm md:text-md max-w-[80%] sm:max-w-[100%]">
                       $58.71
                     </p>
                   </div>
@@ -129,7 +129,7 @@ const CustomKeyboard = () => {
                       />
                     </button>
                   </div>
-                  <div className="absolute right-4 bottom-4 opacity-50 z-10 backdrop-blur-xl">
+                  <div className="absolute left-4 bottom-4 opacity-50 z-10 backdrop-blur-xl">
                     <Image src={imgLogo} width="60" height="60" alt="logo" />
                   </div>
                   <Canvas
@@ -232,20 +232,18 @@ const CustomKeyboard = () => {
                       style={styles.popper}
                       {...attributes.popper}
                     >
-                      <div className="flex flex-col items-center w-full">
-                        <HexColorPicker
-                          color={
-                            selectedModul == "big-buttons"
-                              ? bigButtonscolor
-                              : selectedModul == "case"
-                              ? caseButtonscolor
-                              : selectedModul == "small-buttons"
-                              ? smallButtonscolor
-                              : "#000000"
-                          }
-                          onChange={(value) => changeColor(value)}
-                        />
-                      </div>
+                      <HexColorPicker
+                        color={
+                          selectedModul == "big-buttons"
+                            ? bigButtonscolor
+                            : selectedModul == "case"
+                            ? caseButtonscolor
+                            : selectedModul == "small-buttons"
+                            ? smallButtonscolor
+                            : "#000000"
+                        }
+                        onChange={(value) => changeColor(value)}
+                      />
                     </Popover.Panel>
                   </div>
                 </Popover>
