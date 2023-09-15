@@ -13,6 +13,9 @@ const CardProduct = ({ data, index }) => (
       width={400}
       height={300}
       objectFit="cover"
+      quality={50}
+      placeholder="blur"
+      blurDataURL="data:image/jpeg..."
       // sizes="100%"
       // style={{ width: "100%", height: 200, objectFit: "cover" }} // optional
     />

@@ -39,7 +39,7 @@ const CustomKeyboard = () => {
       </Head>
       <div className="min-h-screen">
         <section className="text-gray-700 body-font overflow-hidden bg-white">
-          <div className=" pb-24 pt-10 mx-auto px-4">
+          <div className=" pb-24 pt-24 mx-auto px-4">
             <div className="w-100 lg:w-4/5 mx-auto flex flex-wrap justify-center md:justify-start">
               <div className="w-100 lg:w-2/3 h-full object-cover object-center rounded border border-gray-200 relative">
                 <Suspense
@@ -109,7 +109,7 @@ const CustomKeyboard = () => {
                   </Canvas>
                 </Suspense>
               </div>
-              <div className="lg:w-1/3 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+              <div className="lg:w-1/3 w-full lg:pl-10 mt-6 lg:mt-0">
                 <h1 className="hidden md:block text-gray-900 text-2xl title-font font-medium mb-1">
                   Personalizing Your Keyboard
                 </h1>

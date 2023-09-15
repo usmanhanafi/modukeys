@@ -15,20 +15,12 @@ const dummy_products = require("@/public/json-dummy/product.json");
 const category_dummy = require("@/public/json-dummy/category.json");
 
 export default function Home() {
-  // useEffect(() => {
-  //   Report.info(
-  //     "Coming Soon",
-  //     "Shopping Cart Feature Under Development",
-  //     "Okay"
-  //   );
-  // }, []);
-
   var settings = {
-    dots: true,
-    infinite: true,
+    dots: false,
     arrows: false,
     speed: 500,
     autoplaySpeed: 2000,
+    delay: 5000,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -179,7 +171,7 @@ const ImageBannerSlider = (props) => (
     <div className="absolute top-0 w-full h-full z-10 pt-16">
       <div className=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-start ">
         <h1
-          className={`leading-snug text-3xl md:text-4xl lg:text-5xl font-semibold uppercase lg:max-w-xl text-${
+          className={`leading-loose text-3xl md:text-4xl lg:text-5xl font-semibold uppercase lg:max-w-xl text-${
             props.color || "white"
           }`}
         >
@@ -198,20 +190,4 @@ const ImageBannerSlider = (props) => (
       </div>
     </div>
   </div>
-);
-const ImageItem = (...props) => (
-  <Image
-    src={bannerHome}
-    width={0}
-    height={0}
-    sizes="100%"
-    style={{
-      width: "100%",
-      height: props.height || "100%",
-      objectFit: "cover",
-    }}
-    placeholder="blur"
-    blurDataURL="data:..."
-    alt="image"
-  />
 );
