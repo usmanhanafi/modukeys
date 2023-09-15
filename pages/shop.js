@@ -14,22 +14,15 @@ const sortOptions = [
   { name: "Price: Low to High", href: "#", current: false },
   { name: "Price: High to Low", href: "#", current: false },
 ];
-const subCategories = [
-  { name: "Totes", href: "#" },
-  { name: "Backpacks", href: "#" },
-  { name: "Travel Bags", href: "#" },
-  { name: "Hip Bags", href: "#" },
-  { name: "Laptop Sleeves", href: "#" },
-];
 const filters = [
   {
     id: "category",
     name: "Category",
     options: [
-      { value: "gaming-keyboards", label: "Gaming Keyboard", checked: true },
-      { value: "compact-keyboard", label: "Compact Keyboard", checked: true },
-      { value: "artisan-keyboard", label: "Artisan Keyboard", checked: true },
-      { value: "wireless-keyboard", label: "WirelessKeyboard", checked: true },
+      { value: "gaming-keyboards", label: "Gaming Keyboard", checked: false },
+      { value: "compact-keyboard", label: "Compact Keyboard", checked: false },
+      { value: "artisan-keyboard", label: "Artisan Keyboard", checked: false },
+      { value: "wireless-keyboard", label: "WirelessKeyboard", checked: false },
     ],
   },
   {
@@ -182,12 +175,46 @@ export default function Shop() {
         <section>
           <Container>
             <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-10">
-              <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-gray-900">
+              <h1 className="hidden sm:block text-2xl md:text-4xl font-bold tracking-tight text-gray-900">
                 All Products
               </h1>
 
               <div className="flex items-center">
-                <Menu as="div" className="relative inline-block text-left">
+                <form className="mr-2">
+                  <label
+                    for="default-search"
+                    class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+                  >
+                    Search
+                  </label>
+                  <div class="relative md:mr-2">
+                    <div class="absolute p-2 m-1 bg-gray-100 sm:inset-y-0 sm:left-0 flex items-center sm:pl-3 pointer-events-none">
+                      <svg
+                        class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      type="search"
+                      class="block bg-gray-100 w-full px-4 py-3 pl-10 text-sm text-black"
+                      placeholder="Search Products ..."
+                      required
+                    />
+                  </div>
+                </form>
+
+                <Menu as="div" className="relative inline-block text-left ">
                   <div>
                     <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
                       Sort
@@ -235,7 +262,7 @@ export default function Shop() {
 
                 <button
                   type="button"
-                  className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
+                  className="-m-2 ml-1 sm:ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
                   onClick={() => setMobileFiltersOpen(true)}
                 >
                   <span className="sr-only">Filters</span>

@@ -17,11 +17,13 @@ const category_dummy = require("@/public/json-dummy/category.json");
 
 export default function Home() {
   var settings = {
-    dots: true,
     arrows: false,
     autoplaySpeed: 3000,
-    // infinite: true,
+    speed: 2000,
+    lazyLoad: true,
+    infinite: true,
     autoplay: true,
+    pauseOnHover: true,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -139,16 +141,16 @@ export default function Home() {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 <div className="w-full bg-black col-span-2">
                   <div
-                    className="w-full h-60 relative bg-center bg-cover cursor-pointer hover:blur-sm"
+                    className="w-full h-60 relative bg-center bg-cover cursor-pointer"
                     onClick={() => onHandleBlog()}
                     style={{
-                      backgroundImage: `url(/images/krishdiphong-prayoonwongkasem-oxRLqxQ9v8o-unsplash.webp)`,
+                      backgroundImage: `url(/images/pedro-costa-aXY5doQNZTc-unsplash.webp)`,
                     }}
                   >
                     <div className="absolute z-10 bottom-0 left-0 bg-gray-800/60 backdrop-blur w-[100%] p-4">
-                      <h2 className="text-md text-white font-semibold truncate w-[80%]">
+                      <h2 className="text-md text-white font-semibold truncate hover:text-ellipsis hover:w-[100%] w-[80%]">
                         Getting to Know ModuKeys: The Revolutionary Mechanical
-                        Keyboard
+                        Keyboard{" "}
                       </h2>
                       <p className="text-sm text-white/70 truncate w-[80%]">
                         ModuKeys is the latest mechanical keyboard that has
@@ -163,17 +165,17 @@ export default function Home() {
                 </div>
                 <div className="w-full bg-black">
                   <div
-                    className="w-full h-60 relative bg-center bg-cover cursor-pointer hover:blur-sm"
+                    className="w-full h-60 relative bg-center bg-cover cursor-pointer"
                     onClick={() => onHandleBlog()}
                     style={{
-                      backgroundImage: `url(/images/krishdiphong-prayoonwongkasem-oxRLqxQ9v8o-unsplash.webp)`,
+                      backgroundImage: `url(/images/motiur-rahman-shakil-mpU7fYbH2-s-unsplash.webp)`,
                     }}
                   >
                     <div className="absolute z-10 bottom-0 left-0 bg-gray-800/60 backdrop-blur w-[100%] p-4">
-                      <h2 className="text-md text-white font-semibold truncate w-[80%]">
+                      <h2 className="text-md text-white font-semibold truncate hover:text-ellipsis hover:w-[100%] w-[80%]">
                         A Guide to Choosing the Right ModuKeys for Your Needs
                       </h2>
-                      <p className="text-sm text-white/70 truncate w-[80%]">
+                      <p className="text-sm text-white/70 truncate hover:text-ellipsis hover:w-[100%] w-[80%]">
                         In this article, we will provide a step-by-step guide to
                         help readers choose the ModuKeys keyboard that best
                         suits their needs. We will discuss various models,
@@ -184,17 +186,17 @@ export default function Home() {
                 </div>
                 <div className="w-full bg-black">
                   <div
-                    className="w-full h-60 relative bg-center bg-cover cursor-pointer hover:blur-sm"
+                    className="w-full h-60 relative bg-center bg-cover cursor-pointer"
                     onClick={() => onHandleBlog()}
                     style={{
-                      backgroundImage: `url(/images/krishdiphong-prayoonwongkasem-oxRLqxQ9v8o-unsplash.webp)`,
+                      backgroundImage: `url(/images/andrey-matveev-FPvGiqoZOdE-unsplash.webp)`,
                     }}
                   >
                     <div className="absolute z-10 bottom-0 left-0 bg-gray-800/60 backdrop-blur w-[100%] p-4">
-                      <h2 className="text-md text-white font-semibold truncate w-[80%]">
+                      <h2 className="text-md text-white font-semibold truncate hover:text-ellipsis hover:w-[100%] w-[80%]">
                         Tips and Tricks to Boost Productivity with ModuKeys
                       </h2>
-                      <p className="text-sm text-white/70 truncate w-[80%]">
+                      <p className="text-sm text-white/70 truncate hover:text-ellipsis hover:w-[100%] w-[80%]">
                         ModuKeys is not just an ordinary keyboard but a powerful
                         productivity tool. In this article, we will share some
                         tips and tricks to maximize the ModuKeys experience and
@@ -205,17 +207,17 @@ export default function Home() {
                 </div>
                 <div className="w-full bg-black">
                   <div
-                    className="w-full h-60 relative bg-center bg-cover cursor-pointer hover:blur-sm"
+                    className="w-full h-60 relative bg-center bg-cover cursor-pointer"
                     onClick={() => onHandleBlog()}
                     style={{
-                      backgroundImage: `url(/images/krishdiphong-prayoonwongkasem-oxRLqxQ9v8o-unsplash.webp)`,
+                      backgroundImage: `url(/images/jay-zhang-mFtcZzLruCQ-unsplash.webp)`,
                     }}
                   >
                     <div className="absolute z-10 bottom-0 left-0 bg-gray-800/60 backdrop-blur w-[100%] p-4">
-                      <h2 className="text-md text-white font-semibold truncate w-[80%]">
+                      <h2 className="text-md text-white font-semibold truncate hover:text-ellipsis hover:w-[100%] w-[80%]">
                         How to Care for and Clean Your ModuKeys Keyboard
                       </h2>
-                      <p className="text-sm text-white/70 truncate w-[80%]">
+                      <p className="text-sm text-white/70 truncate hover:text-ellipsis hover:w-[100%] w-[80%]">
                         Taking care of your keyboard is essential to ensure its
                         continued optimal performance. We will provide a
                         comprehensive guide on how to care for and clean your
@@ -227,14 +229,14 @@ export default function Home() {
                 </div>
                 <div className="w-full bg-black">
                   <div
-                    className="w-full h-60 relative bg-center bg-cover cursor-pointer hover:blur-sm"
+                    className="w-full h-60 relative bg-center bg-cover cursor-pointer"
                     onClick={() => onHandleBlog()}
                     style={{
                       backgroundImage: `url(/images/krishdiphong-prayoonwongkasem-oxRLqxQ9v8o-unsplash.webp)`,
                     }}
                   >
                     <div className="absolute z-10 bottom-0 left-0 bg-gray-800/60 backdrop-blur w-[100%] p-4">
-                      <h2 className="text-md text-white font-semibold truncate w-[80%]">
+                      <h2 className="text-md text-white font-semibold truncate hover:text-ellipsis hover:w-[100%] w-[80%]">
                         Latest Developments in the World of Keyboards: What You
                         Need to Know About Upcoming ModuKeys Generations
                       </h2>
@@ -301,6 +303,7 @@ const ImageBannerSlider = (props) => (
           className={`leading-loose text-3xl md:text-4xl lg:text-5xl font-semibold uppercase lg:max-w-xl text-${
             props.color || "white"
           }`}
+          style={{ lineHeight: 1.4 }}
         >
           {props.title}
         </h1>
