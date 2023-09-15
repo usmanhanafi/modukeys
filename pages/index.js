@@ -1,6 +1,7 @@
 import ButtonPrimary from "@/components/ButtonPrimary";
 import CardProduct from "@/components/CardProduct";
 import Container from "@/components/layouts/Container";
+import Navbar from "@/components/layouts/Navbar";
 import { Icon } from "@iconify/react";
 import Head from "next/head";
 import Image from "next/image";
@@ -16,11 +17,10 @@ const category_dummy = require("@/public/json-dummy/category.json");
 
 export default function Home() {
   var settings = {
-    dots: false,
+    dots: true,
     arrows: false,
-    speed: 500,
-    autoplaySpeed: 2000,
-    delay: 5000,
+    autoplaySpeed: 3000,
+    // infinite: true,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -37,86 +37,88 @@ export default function Home() {
           content="ModuKeys, mechanical keyboards, high-performance keyboards, customizable keyboards, typing experience"
         />
       </Head>
-      <section>
-        <Slider {...settings}>
-          <ImageBannerSlider
-            img={bannerHome1}
-            cta="/shop"
-            title="Elevate Your Typing Experience with ModuKeys!"
-            desc="Experience the ultimate typing performance with ModuKeys mechanical
+      <Navbar />
+      <main>
+        <section>
+          <Slider {...settings}>
+            <ImageBannerSlider
+              img={bannerHome1}
+              cta="/shop"
+              title="Elevate Your Typing Experience with ModuKeys!"
+              desc="Experience the ultimate typing performance with ModuKeys mechanical
           keyboards. Unleash your creativity with customizable designs,
           ultra-responsive switches, and superior quality. Don't miss
           out-upgrade to ModuKeys today!"
-            color="white"
-          />
-          <ImageBannerSlider
-            img={bannerHome2}
-            cta="/shop"
-            title="Elevate Your Typing Experience with ModuKeys!"
-            desc="Experience the ultimate typing performance with ModuKeys mechanical
+              color="white"
+            />
+            <ImageBannerSlider
+              img={bannerHome2}
+              cta="/shop"
+              title="Elevate Your Typing Experience with ModuKeys!"
+              desc="Experience the ultimate typing performance with ModuKeys mechanical
           keyboards. Unleash your creativity with customizable designs,
           ultra-responsive switches, and superior quality. Don't miss
           out-upgrade to ModuKeys today!"
-            color="black"
-          />
-        </Slider>
-      </section>
-      <Container>
-        <section className="my-3">
-          {/* <h2 className="text-gray-900 text-center font-bold text-xl">
+              color="black"
+            />
+          </Slider>
+        </section>
+        <Container>
+          <section className="my-3">
+            {/* <h2 className="text-gray-900 text-center font-bold text-xl">
             Category
           </h2> */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            {category_dummy.map((item, index) => (
-              <CardCategory
-                key={index}
-                title={item.name}
-                url={item.url}
-                href={`/shop#${item.name}`}
-              />
-            ))}
-          </div>
-        </section>
-        <section
-          className="my-5 text-center bg-no-repeat bg-cover bg-center"
-          style={{
-            backgroundImage: `url("/images/motiur-rahman-shakil-mpU7fYbH2-s-unsplash.webp")`,
-          }}
-        >
-          <div className="backdrop-blur-sm w-full h-full p-4 md:p-24">
-            <p className="text-white-700 text-sm md:text-md">Customize</p>
-            <h2 className="text-white-900 text-2xl md:text-4xl font-semibold">
-              Customize Your Typing Experience
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+              {category_dummy.map((item, index) => (
+                <CardCategory
+                  key={index}
+                  title={item.name}
+                  url={item.url}
+                  href={`/shop#${item.name}`}
+                />
+              ))}
+            </div>
+          </section>
+          <section
+            className="my-5 text-center bg-no-repeat bg-cover bg-center"
+            style={{
+              backgroundImage: `url("/images/motiur-rahman-shakil-mpU7fYbH2-s-unsplash.webp")`,
+            }}
+          >
+            <div className="backdrop-blur-sm w-full h-full p-4 md:p-24">
+              <p className="text-white-700 text-sm md:text-md">Customize</p>
+              <h2 className="text-white-900 text-2xl md:text-4xl font-semibold">
+                Customize Your Typing Experience
+              </h2>
+              <p className="text-white-800 text-md md:text-lg mt-2 mb-6">
+                Start Personalizing Your Keyboard Today
+              </p>
+              <Link href="/modukeys-by-you">
+                <ButtonPrimary bg="orange-500">Get Started</ButtonPrimary>
+              </Link>
+            </div>
+          </section>
+          <section className="my-16">
+            <h2 className="text-gray-800 text-center font-bold text-2xl">
+              Most Popular
             </h2>
-            <p className="text-white-800 text-md md:text-lg mt-2 mb-6">
-              Start Personalizing Your Keyboard Today
+            <p className="text-gray-800 text-center">
+              Discover our most popular and top-rated products that customers
             </p>
-            <Link href="/modukeys-by-you">
-              <ButtonPrimary bg="orange-500">Get Started</ButtonPrimary>
-            </Link>
-          </div>
-        </section>
-        <section className="my-16">
-          <h2 className="text-gray-800 text-center font-bold text-2xl">
-            Most Popular
-          </h2>
-          <p className="text-gray-800 text-center">
-            Discover our most popular and top-rated products that customers
-          </p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
-            {dummy_products.map((item, index) =>
-              index >= 4 ? null : (
-                <CardProduct key={index} data={item} index={index} />
-              )
-            )}
-          </div>
-          <div className="flex justify-center w-full mt-6">
-            <Link href="/shop">
-              <ButtonPrimary>Learn More</ButtonPrimary>
-            </Link>
-          </div>
-        </section>
-        {/* <section className="my-16">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+              {dummy_products.map((item, index) =>
+                index >= 4 ? null : (
+                  <CardProduct key={index} data={item} index={index} />
+                )
+              )}
+            </div>
+            <div className="flex justify-center w-full mt-6">
+              <Link href="/shop">
+                <ButtonPrimary>Learn More</ButtonPrimary>
+              </Link>
+            </div>
+          </section>
+          {/* <section className="my-16">
           <h2 className="text-gray-900 text-center font-bold text-2xl">
             Edukeys
           </h2>
@@ -125,7 +127,8 @@ export default function Home() {
           </p>
           <div className="relative grid grid-cols-2 gap-4"></div>
         </section> */}
-      </Container>
+        </Container>
+      </main>
     </>
   );
 }

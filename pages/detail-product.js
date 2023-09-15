@@ -1,3 +1,4 @@
+import Navbar from "@/components/layouts/Navbar";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -44,8 +45,9 @@ const DetailProduct = () => {
         />
         <title>ModuKeys Pro X1 Gaming Keyboard - Elevate Your Gaming</title>
       </Head>
-      <section className="text-gray-700 body-font overflow-hidden bg-white px-4">
-        <div className=" py-24 mx-auto">
+      <Navbar />
+      <main className="text-gray-700 body-font overflow-hidden bg-white px-4">
+        <section className=" py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             <Image
               alt="modukeys"
@@ -114,8 +116,8 @@ const DetailProduct = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </>
   );
 };
