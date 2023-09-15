@@ -25,6 +25,16 @@ export default function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  function onHandleBlog() {
+    Report.info(
+      "Coming Soon",
+      "Stay tuned for exciting updates and fresh content on our blog",
+      "Okay",
+      {
+        borderRadius: 0,
+      }
+    );
+  }
   return (
     <>
       <Head>
@@ -118,15 +128,129 @@ export default function Home() {
               </Link>
             </div>
           </section>
-          {/* <section className="my-16">
-          <h2 className="text-gray-900 text-center font-bold text-2xl">
-            Edukeys
-          </h2>
-          <p className="text-gray-800 text-center">
-            Discover our most popular and top-rated products that customers
-          </p>
-          <div className="relative grid grid-cols-2 gap-4"></div>
-        </section> */}
+          <section className="my-16">
+            <h2 className="text-gray-900 text-center font-bold text-2xl">
+              Edukeys
+            </h2>
+            <p className="text-gray-800 text-center">
+              Discover our most popular and top-rated products that customers
+            </p>
+            <div className="w-full mt-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <div className="w-full bg-black col-span-2">
+                  <div
+                    className="w-full h-60 relative bg-center bg-cover cursor-pointer hover:blur-sm"
+                    onClick={() => onHandleBlog()}
+                    style={{
+                      backgroundImage: `url(/images/krishdiphong-prayoonwongkasem-oxRLqxQ9v8o-unsplash.webp)`,
+                    }}
+                  >
+                    <div className="absolute z-10 bottom-0 left-0 bg-gray-800/60 backdrop-blur w-[100%] p-4">
+                      <h2 className="text-md text-white font-semibold truncate w-[80%]">
+                        Getting to Know ModuKeys: The Revolutionary Mechanical
+                        Keyboard
+                      </h2>
+                      <p className="text-sm text-white/70 truncate w-[80%]">
+                        ModuKeys is the latest mechanical keyboard that has
+                        captured the attention of keyboard enthusiasts
+                        worldwide. This article will explain the unique features
+                        of ModuKeys, the technology behind it, and why it has
+                        become one of the top choices for users seeking
+                        performance and comfort.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-full bg-black">
+                  <div
+                    className="w-full h-60 relative bg-center bg-cover cursor-pointer hover:blur-sm"
+                    onClick={() => onHandleBlog()}
+                    style={{
+                      backgroundImage: `url(/images/krishdiphong-prayoonwongkasem-oxRLqxQ9v8o-unsplash.webp)`,
+                    }}
+                  >
+                    <div className="absolute z-10 bottom-0 left-0 bg-gray-800/60 backdrop-blur w-[100%] p-4">
+                      <h2 className="text-md text-white font-semibold truncate w-[80%]">
+                        A Guide to Choosing the Right ModuKeys for Your Needs
+                      </h2>
+                      <p className="text-sm text-white/70 truncate w-[80%]">
+                        In this article, we will provide a step-by-step guide to
+                        help readers choose the ModuKeys keyboard that best
+                        suits their needs. We will discuss various models,
+                        switch types, and special features available.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-full bg-black">
+                  <div
+                    className="w-full h-60 relative bg-center bg-cover cursor-pointer hover:blur-sm"
+                    onClick={() => onHandleBlog()}
+                    style={{
+                      backgroundImage: `url(/images/krishdiphong-prayoonwongkasem-oxRLqxQ9v8o-unsplash.webp)`,
+                    }}
+                  >
+                    <div className="absolute z-10 bottom-0 left-0 bg-gray-800/60 backdrop-blur w-[100%] p-4">
+                      <h2 className="text-md text-white font-semibold truncate w-[80%]">
+                        Tips and Tricks to Boost Productivity with ModuKeys
+                      </h2>
+                      <p className="text-sm text-white/70 truncate w-[80%]">
+                        ModuKeys is not just an ordinary keyboard but a powerful
+                        productivity tool. In this article, we will share some
+                        tips and tricks to maximize the ModuKeys experience and
+                        enhance everyday productivity.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-full bg-black">
+                  <div
+                    className="w-full h-60 relative bg-center bg-cover cursor-pointer hover:blur-sm"
+                    onClick={() => onHandleBlog()}
+                    style={{
+                      backgroundImage: `url(/images/krishdiphong-prayoonwongkasem-oxRLqxQ9v8o-unsplash.webp)`,
+                    }}
+                  >
+                    <div className="absolute z-10 bottom-0 left-0 bg-gray-800/60 backdrop-blur w-[100%] p-4">
+                      <h2 className="text-md text-white font-semibold truncate w-[80%]">
+                        How to Care for and Clean Your ModuKeys Keyboard
+                      </h2>
+                      <p className="text-sm text-white/70 truncate w-[80%]">
+                        Taking care of your keyboard is essential to ensure its
+                        continued optimal performance. We will provide a
+                        comprehensive guide on how to care for and clean your
+                        ModuKeys keyboard to keep it looking and functioning
+                        like new.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-full bg-black">
+                  <div
+                    className="w-full h-60 relative bg-center bg-cover cursor-pointer hover:blur-sm"
+                    onClick={() => onHandleBlog()}
+                    style={{
+                      backgroundImage: `url(/images/krishdiphong-prayoonwongkasem-oxRLqxQ9v8o-unsplash.webp)`,
+                    }}
+                  >
+                    <div className="absolute z-10 bottom-0 left-0 bg-gray-800/60 backdrop-blur w-[100%] p-4">
+                      <h2 className="text-md text-white font-semibold truncate w-[80%]">
+                        Latest Developments in the World of Keyboards: What You
+                        Need to Know About Upcoming ModuKeys Generations
+                      </h2>
+                      <p className="text-sm text-white/70 truncate w-[80%]">
+                        The keyboard industry continues to evolve, and ModuKeys
+                        is not standing still. This article will cover the
+                        latest developments in the world of keyboards and
+                        provide insights into what to expect from the upcoming
+                        generations of ModuKeys keyboards.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </Container>
       </main>
     </>
@@ -172,7 +296,7 @@ const ImageBannerSlider = (props) => (
       alt="image"
     />
     <div className="absolute top-0 w-full h-full z-10 pt-16">
-      <div className=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-start ">
+      <div className=" mx-auto max-w-7xl px-4 sm:px-6 lg:pt-40 flex flex-col justify-center items-start ">
         <h1
           className={`leading-loose text-3xl md:text-4xl lg:text-5xl font-semibold uppercase lg:max-w-xl text-${
             props.color || "white"
@@ -181,7 +305,7 @@ const ImageBannerSlider = (props) => (
           {props.title}
         </h1>
         <p
-          className={`leading-loose text-sm lg:text-md opacity-80 lg:max-w-xl mt-4 mb-6 text-${
+          className={`leading-loose text-sm lg:text-lg opacity-80 lg:max-w-xl mt-4 mb-6 text-${
             props.color || "white"
           }`}
         >

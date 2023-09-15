@@ -67,14 +67,14 @@ const DetailProduct = () => {
                 {data.Title}
               </h1>
               <p className="leading-relaxed mt-4">{data.Description}</p>
-              <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
-                <div className="flex">
+              <div className="flex flex-col gap-4 md:flex-row mt-6 md:items-center pb-5 border-b-2 border-gray-200 mb-5">
+                <div className="flex w-100">
                   <span className="mr-3">Switch</span>
                   <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
                   <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
                   <button className="border-2 border-gray-300 ml-1 bg-red-500 rounded-full w-6 h-6 focus:outline-none"></button>
                 </div>
-                <div className="flex ml-6 items-center">
+                <div className="flex items-center w-100">
                   <span className="mr-3">Material</span>
                   <div className="relative">
                     <select className="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10">

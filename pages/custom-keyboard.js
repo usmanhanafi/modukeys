@@ -8,6 +8,7 @@ import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Head from "next/head";
 import Image from "next/image";
+import { Confirm, Notify } from "notiflix";
 import { Suspense, useState } from "react";
 import { HexColorPicker } from "react-colorful";
 import { usePopper } from "react-popper";
@@ -33,6 +34,24 @@ const CustomKeyboard = () => {
       setsmallButtonsColor(value);
     }
   }
+  function onHandleDone() {
+    Confirm.show(
+      "Confirm Customization",
+      "Are you sure about your customization",
+      "Yes",
+      "No",
+      () => {
+        Notify.success("Item successfully added to the cart.");
+        history.back();
+      },
+      () => {
+        Notify.failure("Item failed added to the cart");
+      },
+      {
+        borderRadius: 0,
+      }
+    );
+  }
   return (
     <>
       <Head>
@@ -50,7 +69,7 @@ const CustomKeyboard = () => {
         fallback={
           <div
             role="status"
-            className="flex gap-4 p-10 justify-center items-center"
+            className="flex gap-4 p-10 h-screen justify-center items-center"
           >
             <svg
               ariaHidden="true"
@@ -85,8 +104,11 @@ const CustomKeyboard = () => {
                       $58.71
                     </p>
                   </div>
-                  <div className="absolute right-4 top-4 z-10">
-                    <button className="flex gap-2 items-center ml-auto text-white bg-gray-500 border-0 py-3 px-4 focus:outline-none hover:bg-green-600">
+                  <div className="absolute flex gap-4 right-4 top-4 z-10">
+                    <button
+                      onClick={() => onHandleDone()}
+                      className="flex gap-2 items-center ml-auto text-white bg-gray-500 border-0 py-3 px-4 focus:outline-none hover:bg-green-600"
+                    >
                       <Icon
                         icon="pajamas:todo-done"
                         color="white"
@@ -94,6 +116,17 @@ const CustomKeyboard = () => {
                         height="20"
                       />
                       <p className="text-sm font-medium text-white">Done</p>
+                    </button>
+                    <button
+                      onClick={() => history.back()}
+                      className="hidden sm:block bg-gray-200 border-0 py-3 px-4 focus:outline-none hover:opcaity-80"
+                    >
+                      <Icon
+                        icon="icon-park-outline:back"
+                        color="black"
+                        width="20"
+                        height="20"
+                      />
                     </button>
                   </div>
                   <div className="absolute right-4 bottom-4 opacity-50 z-10 backdrop-blur-xl">
