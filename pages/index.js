@@ -27,16 +27,16 @@ export default function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  function onHandleBlog() {
-    Report.info(
-      "Coming Soon",
-      "Stay tuned for exciting updates and fresh content on our blog",
-      "Okay",
-      {
-        borderRadius: 0,
-      }
-    );
-  }
+  // function onHandleBlog() {
+  //   Report.info(
+  //     "Coming Soon",
+  //     "Stay tuned for exciting updates and fresh content on our blog",
+  //     "Okay",
+  //     {
+  //       borderRadius: 0,
+  //     }
+  //   );
+  // }
   return (
     <>
       <Head>
@@ -130,7 +130,7 @@ export default function Home() {
               </Link>
             </div>
           </section>
-          <section className="my-16">
+          {/* <section className="my-16">
             <h2 className="text-gray-900 text-center font-bold text-2xl">
               Edukeys
             </h2>
@@ -252,7 +252,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
         </Container>
       </main>
     </>
@@ -298,7 +298,7 @@ const ImageBannerSlider = (props) => (
       alt="image"
     />
     <div className="absolute top-0 w-full h-full z-10 pt-16">
-      <div className=" mx-auto max-w-7xl px-4 sm:px-6 lg:pt-40 flex flex-col justify-center items-start ">
+      <div className=" mx-auto max-w-7xl px-4 sm:px-6 pt-[20vh] lg:pt-40 flex flex-col justify-center items-start ">
         <h1
           className={`leading-loose text-3xl md:text-4xl lg:text-5xl font-semibold uppercase lg:max-w-xl text-${
             props.color || "white"
