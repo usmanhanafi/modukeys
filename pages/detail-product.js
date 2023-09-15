@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import { Report } from "notiflix";
 const dummy_products = require("@/public/json-dummy/product.json");
 const materials = [
   "Plastic",
@@ -32,6 +32,16 @@ const DetailProduct = () => {
   if (!data) {
     return <p>Loading...</p>;
   }
+  const onHandleCart = () => {
+    Report.info(
+      "Coming Soon",
+      "Shopping Cart Feature Under Development",
+      "Okay",
+      {
+        borderRadius: 0,
+      }
+    );
+  };
   return (
     <>
       <Head>
@@ -109,7 +119,10 @@ const DetailProduct = () => {
                     </button>
                   </Link>
                 ) : (
-                  <button className="flex ml-auto text-white bg-black border-0 py-2 px-6 focus:outline-none hover:opacity-80">
+                  <button
+                    onClick={() => onHandleCart()}
+                    className="flex ml-auto text-white bg-black border-0 py-2 px-6 focus:outline-none hover:opacity-80"
+                  >
                     Add To Cart
                   </button>
                 )}
